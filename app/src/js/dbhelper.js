@@ -71,7 +71,7 @@ class DBHelper {
             //if we have stored JSON data in the indexDB
             if (storedData.length > 0) {
 
-               // console.log('We have stored data in our ibd', storedData);
+               //console.log('We have stored data in our ibd', storedData);
 
                 callback(null, storedData); //we are returning the stored data from the idb
             }

@@ -14,7 +14,7 @@
  * Service Worker actions
  */
 
-let cacheName = 'gglnd-stage1-v0';
+let cacheName = 'gglnd-stage2-v0';
 
 let urlsToCache = [
     '/',
@@ -23,10 +23,10 @@ let urlsToCache = [
     '/dist/styles.min.css',
     '/dist/large-screen.css',
     '/dist/medium-screen.css',
-    '/dist/libs.js',
-    '/dist/main.js',
-    '/dist/restaurant_info.js',
-    '/restaurant.html' //for restaurant details ;)
+    //'/dist/libs.js', //todo uncomment in production
+    //'/dist/main.js', //todo uncomment in production
+    //'/dist/restaurant_info.js', //todo uncomment in production
+    //'/restaurant.html' //for restaurant details ;)
 ];
 
 
@@ -68,12 +68,14 @@ self.addEventListener('fetch', function (event) {
                             return response;
                         }
 
-                        let responseToCache = response.clone();
+                        //add to cache only selected urls? //todo To add all fetched assets to cache uncomment below
+                        //urlsToCache
+                        /*let responseToCache = response.clone();
 
                         caches.open(cacheName)
                             .then(function (cache) {
                                 cache.put(event.request, responseToCache);
-                            });
+                            });*/
 
                         return response;
                     }

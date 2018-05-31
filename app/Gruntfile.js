@@ -105,7 +105,7 @@ module.exports = function(grunt) {
           },
           src: {
               files: ['src/js/*.js', 'src/css/**/*.css', '!lib/dontwatch.js'],
-              tasks: ['default']
+              tasks: ['concat','copy']
           },
           options: {
               dateFormat: function(time) {
@@ -125,6 +125,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-mkdir');
-  grunt.registerTask('default', ['clean', 'postcss', 'copy', 'concat' , 'mkdir', 'responsive_images','watch']);
+  grunt.registerTask('default', ['clean', 'postcss', 'copy', 'concat' , 'mkdir', 'responsive_images', 'watch']);
 
 };

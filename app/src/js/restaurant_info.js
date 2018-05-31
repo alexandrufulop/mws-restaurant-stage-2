@@ -8,7 +8,7 @@ window.initMap = () => {
     self.map = new google.maps.Map(document.getElementById('map'), {
         title: 'A map with the location of the restaurants', //added google maps title a11y
         zoom: 16,
-        center: self.restaurant.latlng, //fixed bug
+        center: self.restaurant.latlng,
         scrollwheel: false
     });
 };
@@ -23,6 +23,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
         if (error) { // Got an error!
             console.error(error);
         } else {
+
+            //console.log(restaurant); //restaurant data from parsed json
+
             fillBreadcrumb();
             DBHelper.mapMarkerForRestaurant(self.restaurant, self.map);
         }
@@ -58,6 +61,7 @@ fetchRestaurantFromURL = (callback) => {
  * Create restaurant HTML and add it to the webpage
  */
 fillRestaurantHTML = (restaurant = self.restaurant) => {
+
     const name = document.getElementById('restaurant-name');
     name.innerHTML = restaurant.name;
 
@@ -85,7 +89,6 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
         }
     }
 
-
     const cuisine = document.getElementById('restaurant-cuisine');
     /**
      * a11y
@@ -99,6 +102,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
     if (restaurant.operating_hours) {
         fillRestaurantHoursHTML();
     }
+
     // fill reviews
     fillReviewsHTML();
 };
@@ -136,9 +140,12 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
 fillReviewsHTML = (reviews = self.restaurant.reviews) => {
 
     const container = document.getElementById('reviews-container');
+
+    console.log(container.innerHTML); //work in progress
+    //duplicate content issue //todo
+
     const title = document.createElement('h3');
     title.innerHTML = 'Reviews';
-
     /**
      * a11y
      * Allow tabbing to the Reviews section
@@ -219,6 +226,7 @@ createReviewHTML = (review) => {
  */
 fillBreadcrumb = (restaurant = self.restaurant) => {
     const breadcrumb = document.getElementById('breadcrumb');
+
     const li = document.createElement('li');
     li.innerHTML = restaurant.name;
 
