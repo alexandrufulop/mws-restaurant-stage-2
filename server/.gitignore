@@ -1,0 +1,6 @@
+.idea
+node_modules
+npm-debug.log
+pointless_change
+package-lock.json
+/docs
