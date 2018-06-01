@@ -157,8 +157,10 @@ createRestaurantHTML = (restaurant) => {
         image.className = 'restaurant-img';
         image.src = imageSrc;
 
-        /* Server different images for different viewports */
-        image.srcset = `/img/${restaurant.photograph}-400.jpg 360w, /img/${restaurant.photograph}-800.jpg 800w`;
+        /* Prevent bug in server json: There is a bug in the server side json -> last item is missing the photograph */
+        if (restaurant.photograph !== undefined) {
+            image.srcset = `/img/${restaurant.photograph}-400.jpg 360w, /img/${restaurant.photograph}-800.jpg 800w`;
+        }
 
         //Adding dynamic alt text for each image
         image.alt = DBHelper.imageAltForRestaurant(restaurant);

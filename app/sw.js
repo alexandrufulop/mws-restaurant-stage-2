@@ -18,6 +18,8 @@ let cacheName = 'gglnd-stage2-v0';
 
 let urlsToCache = [
     '/',
+    '/icon.png',
+    '/icon-min.png',
     '/favicon.ico',
     '/manifest.json',
     '/index.html?launcher=true',
