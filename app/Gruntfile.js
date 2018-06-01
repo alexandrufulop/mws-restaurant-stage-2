@@ -40,12 +40,12 @@ module.exports = function(grunt) {
             //name: 'small',
             width: 400, /* 400px for devices with smallers screen */
 			//suffix: '-small',
-            quality: 20
+            quality: 15
           },{
             //name: 'large',
             width: 800, /* 800 px for devices with large screen */
             //suffix: '-large',
-            quality: 30
+            quality: 20
           }]
         },
         files: [{
