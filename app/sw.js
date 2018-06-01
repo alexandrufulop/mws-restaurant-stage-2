@@ -19,14 +19,17 @@ let cacheName = 'gglnd-stage2-v0';
 let urlsToCache = [
     '/',
     '/favicon.ico',
+    '/manifest.json',
+    '/index.html?launcher=true',
     '/fonts/raleway-v12-latin-regular.woff2',
     '/dist/styles.min.css',
     '/dist/large-screen.css',
     '/dist/medium-screen.css',
-    //'/dist/libs.js', //todo uncomment in production
-    //'/dist/main.js', //todo uncomment in production
-    //'/dist/restaurant_info.js', //todo uncomment in production
-    //'/restaurant.html' //for restaurant details ;)
+    '/dist/libs.js',
+    '/dist/main.js',
+    '/dist/restaurant_info.js',
+    '/restaurant.html',
+    'http://localhost:1337/restaurants' //caching json request
 ];
 
 
@@ -68,14 +71,13 @@ self.addEventListener('fetch', function (event) {
                             return response;
                         }
 
-                        //add to cache only selected urls? //todo To add all fetched assets to cache uncomment below
-                        //urlsToCache
-                        /*let responseToCache = response.clone();
+                        //add all fetched assets to cache
+                        let responseToCache = response.clone();
 
                         caches.open(cacheName)
                             .then(function (cache) {
                                 cache.put(event.request, responseToCache);
-                            });*/
+                            });
 
                         return response;
                     }

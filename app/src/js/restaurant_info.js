@@ -51,7 +51,8 @@ fetchRestaurantFromURL = (callback) => {
                 console.error(error);
                 return;
             }
-            fillRestaurantHTML();
+
+            fillRestaurantHTML(); //fill the html with restaurant data
             callback(null, restaurant)
         });
     }
@@ -140,9 +141,6 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
 fillReviewsHTML = (reviews = self.restaurant.reviews) => {
 
     const container = document.getElementById('reviews-container');
-
-    console.log(container.innerHTML); //work in progress
-    //duplicate content issue //todo
 
     const title = document.createElement('h3');
     title.innerHTML = 'Reviews';
