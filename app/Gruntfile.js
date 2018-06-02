@@ -15,7 +15,7 @@ module.exports = function(grunt) {
               sourceMap: false
           },
           dist: {
-              src: ['node_modules/idb/lib/idb.js','src/js/dbhelper.js'],
+              src: ['node_modules/vanilla-lazyload/dist/lazyload.min.js', 'node_modules/idb/lib/idb.js','src/js/dbhelper.js'],
               dest: 'dist/libs.js',
           },
       },
@@ -45,7 +45,7 @@ module.exports = function(grunt) {
             //name: 'large',
             width: 800, /* 800 px for devices with large screen */
             //suffix: '-large',
-            quality: 20
+            quality: 15
           }]
         },
         files: [{

@@ -4,15 +4,15 @@
     <meta charset="utf-8">
     <meta name="description" content="Restaurant Reviews - Stage 1"/>
     <meta name="author" content="Alexandru Fulop">
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="/manifest.json">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
     <meta itemprop="name" content="Restaurant Reviews - Stage 1">
     <meta itemprop="image" content="icon-min.png">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <meta name="mobile-web-app-capable" content="yes">
-    <meta id="theme-color" name="theme-color" content="#3397DB">
-    <link rel="stylesheet" href="dist/styles.min.css">
+    <meta id="theme-color" name="theme-color" content="#55d4be">
+    <link rel="stylesheet" href="/dist/styles.min.css">
     <link rel="stylesheet" media="screen and (min-width: 360px)" href="dist/medium-screen.css">
     <link rel="stylesheet" media="screen and (min-width: 800px)" href="dist/large-screen.css">
     <title>Restaurant Info</title>
@@ -24,7 +24,7 @@
     <nav role="navigation">
         <h1 role="heading">
             <a href="/" title="Homepage">
-                <svg id="Logo" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
+                <svg id="Logo" width="50" height="57" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
                      viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
                      <path style="fill:#55d4be;" d="M148.754,344.012H85.185c-11.702,0-21.19-9.487-21.19-21.19V149.194
                         c0-11.702,9.487-21.19,21.19-21.19h63.57c11.702,0,21.19,9.487,21.19,21.19v173.628
@@ -118,13 +118,11 @@
 </footer>
 <!-- End footer -->
 <!-- Beginning scripts -->
-<script src="dist/libs.js"></script> <!-- JS scripts in one // run grunt! -->
-<script src="dist/main.js"></script> <!-- JS scripts in one // run grunt! -->
-<script src="dist/restaurant_info.js"></script> <!-- Restaurant info for this page only -->
+<script src="/dist/libs.js"></script> <!-- JS scripts in one // run grunt! -->
+<script src="/dist/main.js"></script> <!-- JS scripts in one // run grunt! -->
+<script src="/dist/restaurant_info.js"></script> <!-- Restaurant info for this page only -->
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDz9jb0dWCRZg-4MhD9adsvD1uHKBb82_c&libraries=places&callback=initMap"></script>
-<!-- Google Maps -->
-<!-- End scripts -->
+<script> new LazyLoad();</script>
 </body>
-
 </html>

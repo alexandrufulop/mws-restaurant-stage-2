@@ -22,7 +22,7 @@ let urlsToCache = [
     '/icon-min.png',
     '/favicon.ico',
     '/manifest.json',
-    '/index.html?launcher=true',
+    '/index.html',
     '/fonts/raleway-v12-latin-regular.woff2',
     '/dist/styles.min.css',
     '/dist/large-screen.css',

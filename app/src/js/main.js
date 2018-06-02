@@ -152,15 +152,21 @@ createRestaurantHTML = (restaurant) => {
 
     /* Do we have a valid image url? */
     let imageSrc = DBHelper.imageUrlForRestaurant(restaurant);
+
     if(imageSrc) {
         const image = document.createElement('img');
         image.className = 'restaurant-img';
-        image.src = imageSrc;
+        image.setAttribute('data-src', imageSrc);
+        image.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
 
         /* Prevent bug in server json: There is a bug in the server side json -> last item is missing the photograph */
         if (restaurant.photograph !== undefined) {
             image.srcset = `/img/${restaurant.photograph}-400.jpg 360w, /img/${restaurant.photograph}-800.jpg 800w`;
         }
+        else
+            {
+                image.srcset = `/img/no-photo-400.png 360w, /img/no-photo-800.png 800w`;
+            }
 
         //Adding dynamic alt text for each image
         image.alt = DBHelper.imageAltForRestaurant(restaurant);
